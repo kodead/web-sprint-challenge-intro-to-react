@@ -3,12 +3,12 @@ import styled from 'styled-components'
 function Character(props) { // ❗ Add the props
   const {character} = props
   console.log(character.name)
-  const StyledCard = styled.div`
-  span {
-    color: ${pr => pr.color}
+  // const StyledCard = styled.div`
+  // span {
+  //   color: ${pr => pr.$color}
     
-  }
-  `
+  // }
+  // `
   // ❗ Create a state to hold whether the homeworld is rendering or not
   const [showHomeworld, setShowHomeworld] = useState(false);
   console.log(showHomeworld)
@@ -19,7 +19,7 @@ function Character(props) { // ❗ Add the props
 
   // ❗ Create a "toggle" click handler to show or remove the homeworld
   return (
-    <StyledCard color = 'black' className="character-card" onClick={toggleHomeworld}>
+    <div className="character-card" onClick={toggleHomeworld}>
       
       <h3 className="character-name">{character.name}</h3>
       {showHomeworld && (
@@ -29,7 +29,7 @@ function Character(props) { // ❗ Add the props
           </span>
           </p>
       )}
-    </StyledCard>
+    </div>
   
 
   )
